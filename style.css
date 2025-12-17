@@ -489,3 +489,128 @@ body {
     font-size: 18px;
   }
 }
+
+@media (max-width: 768px) {
+
+  /* Top bar */
+  .top {
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .team-pill {
+    gap: 10px;
+  }
+
+  .title {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  /* Main wrapper */
+  .main {
+    flex-direction: column;
+    padding: 16px;
+    height: auto;
+    margin-top: -120px;
+  }
+
+  /* Center content */
+  .center {
+    gap: 12px;
+  }
+
+  /* Circle / meter */
+  .meter-wrap {
+    width: 160px;
+    height: 160px;
+  }
+
+  .meter {
+    width: 160px;
+    height: 160px;
+  }
+
+  .meter-inner {
+    width: 120px;
+    height: 120px;
+  }
+
+  .big-number {
+    margin-top: 40px;
+    font-size: 48px;
+  }
+
+  .small-label {
+    font-size: 11px;
+  }
+
+  /* Play button */
+  .play-btn {
+    margin-top: 80px;
+    width: 100%;
+    max-width: 280px;
+    padding: 14px 0;
+    font-size: 16px;
+  }
+
+  /* Score line */
+  .score-big {
+    font-size: 32px;
+  }
+
+  .overs-info {
+    font-size: 13px;
+  }
+
+  /* Bottom batsman section */
+  .bottom-strip {
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .batsman-card {
+    min-width: unset;
+    width: 100%;
+    gap: 14px;
+    flex-direction: column;
+  }
+
+  .bat-name {
+    font-size: 18px;
+  }
+
+  .bat-stats {
+    gap: 18px;
+  }
+
+  .bat-stat .num {
+    font-size: 18px;
+  }
+
+  /* Over timeline */
+  .over-timeline {
+    max-width: 100%;
+    gap: 6px;
+  }
+
+  .bubble {
+    min-width: 40px;
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  /* Toast */
+  .toast {
+    font-size: 16px;
+    padding: 10px 14px;
+  }
+
+  /* Modal */
+  .modal {
+    min-width: unset;
+    width: 92%;
+  }
+}
