@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Pro Cricket Game — Plain HTML/CSS/JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card" id="card">
+    <div class="top">
+      <div class="team-pill">
+        <div class="badge">IND</div>
+        <div class="title">VS</div>
+        <div class="badge">AUS</div>
+      </div>
+
+      <div class="top-controls">
+        <div id="topScore" style="font-weight:900;color:#e6f7ff">IND 0/0 (0.0)</div>
+        <!-- <button class="btn" id="btnSave">Save</button> -->
+        <!-- <button class="btn" id="btnExport">Export CSV</button> -->
+        <!-- <button class="btn" id="btnSaved">Saved</button> -->
+        <button class="btn ghost" id="btnSound" disabled>Match : ON</button>
+        <button class="btn warn" id="btnNew">NEW MATCH</button>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="side">
+        <div class="player-table">
+          <div class="row top-left-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PLAYER &nbsp;&nbsp;&nbsp; RUNS &nbsp;&nbsp; 4s &nbsp;&nbsp; 6s</div>
+          <div style="height:10px"></div>
+          <div id="leftPlayers" style="color:#98cbe8;font-weight:700"></div>
+        </div>
+      </div>
+
+      <div class="center">
+
+            <main class="main-action">
+      <div class="circle-display">
+        <h2 class="run-display" id="run">0</h2>
+        <p class="run-label">RUNS</p>
+      </div>
+        <div class="meter-wrap">
+           
+          <!-- <svg class="radial" width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"> -->
+            <defs>
+                
+              <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#43d1ff"/>
+                <stop offset="1" stop-color="#2bbf8a"/>
+              </linearGradient>
+            </defs>
+            
+            <circle cx="120" cy="120" r="102" stroke="rgba(255,255,255,0.04)" stroke-width="12" fill="none"></circle>
+            <circle id="progress" cx="120" cy="120" r="102" stroke="url(#g1)" stroke-width="8" fill="none"
+              stroke-linecap="round" transform="rotate(-90 120 120)" stroke-dasharray="641.5" stroke-dashoffset="641.5"></circle>
+          </svg>
+
+
+          <div class="meter">
+            <div class="meter-inner">
+              <div class="big-number" id="runDisplay">-</div>
+              <div class="small-label">RUNS</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="play-controls">
+          <button id="btnPlay" class="play-btn">BOWL / HIT</button>
+          <div class="play-mini">Space key also bowls</div>
+        </div>
+
+        <div class="score-line">
+          <div class="score-brief">IND <span style="color:#fff;font-weight:900;margin-left:8px">ind:</span></div>
+          <div class="score-big" id="scoreBig">0/0</div>
+          <div class="overs-info" id="oversInfo">0.0 overs</div>
+        </div>
+        <hr style="width: 100%; color: yellow;">
+        <div class="bottom-strip">
+          <div class="batsman-card">
+            <div class="bat-name" id="strikerName">YASHASVI JAISWAL</div>
+            <div style="width:1px;height:36px;background:rgba(255,255,255,0.04)"></div>
+            <div class="bat-stats">
+              <div class="bat-stat"><div class="label">RUNS</div><div class="num" id="batsmanRuns">0</div></div>
+              <div class="bat-stat"><div class="label">4S</div><div class="num" id="batsman4s">0</div></div>
+              <div class="bat-stat"><div class="label">6S</div><div class="num" id="batsman6s">0</div></div>
+              <div class="bat-stat"><div class="label">BALLS LEFT</div><div class="num" id="ballsLeft">30</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mini-stats">
+          <div style="width:100%;display:flex;justify-content:center">
+            <div class="over-timeline" id="overTimeline" aria-live="polite"></div>
+          </div>
+        </div>
+
+      </div>
+
+    
+    <!-- toast -->
+    <div class="toast" id="toast" aria-hidden="true"><div id="toastIcon"></div><div id="toastText"></div></div>
+
+    <!-- saved modal -->
+    <div class="modal" id="modal">
+      <h3>Saved Matches</h3>
+      <div class="save-list" id="saveList"></div>
+      <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">
+        <button class="btn" id="exportAll">Export All (JSON)</button>
+        <button class="btn" id="clearAll">Clear All</button>
+        <button class="btn" id="closeModal">Close</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
